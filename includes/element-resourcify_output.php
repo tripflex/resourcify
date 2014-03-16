@@ -1,5 +1,14 @@
 <?php
 	global $post;
+
+	function format_url($url) {
+	    if(!(strpos($url, "http://") === 0)
+		&& !(strpos($url, "https://") === 0)) {
+	        $url = "http://$url";
+		}
+	    return $url;
+	}
+
 	$sources = get_post_meta($post->ID,'resourcify_sources',TRUE);
 
 	$total_sources = count($sources['source_title']);
@@ -13,6 +22,8 @@
 			$source_type = $sources['source_type'][$i];
 			$source_title = $sources['source_title'][$i];
 			$source_url = $sources['source_url'][$i];
+
+			if ($source_url) $source_url = format_url($source_url);
 
 			if ($source_url != ''){
 				if ($source_title === '') $source_title = $source_url;
