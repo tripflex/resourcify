@@ -7,7 +7,7 @@
 
 	if($sources['source_title'][0] === '') $total_sources = null;
 
-	if(is_single() && $total_sources){
+	if((get_post_type() == 'post') && $total_sources){
 		$source_html = '<h4>' . $total_sources . ' Sources:</h4><ul>';
 		for ($i = 0; $i < $total_sources; $i++){
 

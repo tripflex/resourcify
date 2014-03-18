@@ -19,7 +19,7 @@ class Resourcify {
 	/**
 	 * @var     string
 	 */
-	const VERSION = '1.00';
+	const VERSION = '1.01';
 	/**
 	 * @var      string
 	 */
