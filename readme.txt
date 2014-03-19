@@ -55,6 +55,8 @@ The manual installation method involves downloading the plugin and uploading it 
 2. Output preview on frontend below post
 
 == Changelog ==
+= 1.0.1 =
+* Fix output to only show on blog posts and not on custom post types.
 
 = 1.0.0 =
 * Initial Creation
