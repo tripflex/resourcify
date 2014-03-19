@@ -7,7 +7,7 @@ Tested up to: 3.8
 Stable tag: 1.0
 License: GPLv3
 
-Add links at the bottom of a post to sources, resources, quotes, and more!
+Automatically add links to the bottom of a blog post for sources, resources, quotes, and more.  Sources are added from metabox when creating post with repeatable field.
 
 == Description ==
 
