@@ -1,4 +1,4 @@
-=== Recourcify ===
+=== Resourcify ===
 Contributors: tripflex
 Donate link: https://www.gittip.com/tripflex
 Tags: post quote, post source, post, resource, source, quote source, source link, source link bottom of page
