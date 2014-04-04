@@ -3,9 +3,7 @@
 
 	$sources = get_post_meta($post->ID,'resourcify_sources',TRUE);
 
-	$total_sources = count($sources['source_title']);
-
-	if($sources['source_title'][0] === '') $total_sources = null;
+	$total_sources = 0; if(isset($sources['source_title'])) $total_sources = count($sources['source_title']);
 
 	if((get_post_type() == 'post') && $total_sources){
 		$source_html = '<h4>' . $total_sources . ' Sources:</h4><ul>';
