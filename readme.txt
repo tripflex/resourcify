@@ -4,7 +4,7 @@ Donate link: https://www.gittip.com/tripflex
 Tags: post quote, post source, post, resource, source, quote source, source link, source link bottom of page
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv3
 
 Automatically add links to the bottom of a blog post for sources, resources, quotes, and more.  Sources are added from metabox when creating post with repeatable field.
@@ -55,6 +55,10 @@ The manual installation method involves downloading the plugin and uploading it 
 2. Output preview on frontend below post
 
 == Changelog ==
+
+= 1.1 =
+* patch fatal php error when counting total sources
+
 = 1.0.1 =
 * Fix output to only show on blog posts and not on custom post types.
 
