@@ -341,11 +341,13 @@ class Resourcify {
 		wp_enqueue_script( $this->plugin_slug . '-panel-script', self::get_url( 'assets/js/panel.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 
 		
+		wp_enqueue_style( $this->plugin_slug . '-resourcify-metaboxstyle', self::get_url( 'assets/css/styles-resourcify_sources.css', __FILE__ ), array(), self::VERSION );
+		wp_enqueue_script( $this->plugin_slug . '-codemirror-resourcify', self::get_url( 'assets/js/codemirror-resourcify.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 		wp_enqueue_style( $this->plugin_slug . '-onoff-styles-toggles-css', self::get_url( 'assets/css/toggles.css', __FILE__ ), array(), self::VERSION );
 		wp_enqueue_script( $this->plugin_slug . '-onoff-script-toggles-min-js', self::get_url( 'assets/js/toggles.min.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 		wp_enqueue_style( $this->plugin_slug . '-codeeditor-styles-editor-css', self::get_url( 'assets/css/editor.css', __FILE__ ), array(), self::VERSION );
 		wp_enqueue_script( $this->plugin_slug . '-codeeditor-script-codemirror-compressed-js', self::get_url( 'assets/js/codemirror-compressed.js', __FILE__ ), array( 'jquery' ), self::VERSION );
-		add_meta_box('resourcify_sources', 'Resourcify', array($this, 'render_metaboxes'), 'post', 'normal', 'high', array( 'slug' => 'resourcify_sources', 'groups' => array('Sources','Template','Template-Help') ) );
+		add_meta_box('resourcify_sources', 'Resourcify', array($this, 'render_metaboxes'), 'post', 'normal', 'high', array( 'slug' => 'resourcify_sources', 'groups' => array('Sources','Template','Template-Help','About') ) );
 		//{{shortcode}}
 		//resourcify
 		//resourcify

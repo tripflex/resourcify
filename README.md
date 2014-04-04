@@ -3,16 +3,20 @@ Resourcify
 
 Resourcify is a Wordpress Plugin that will allow you to add Sources, Resources, and Quote Sources to a post.
 
-Simply put, it gives you an interface on the post admin area to add a Title and URL for each Resource.  The plugin will then output those resources at the bottom of a single post page using standard html `<ul>` and `<li>` tags.
+Simply put, it gives you an interface on the post admin area to add a Title and URL for each Resource.  The plugin will then output those resources at the bottom of a single blog post page using either the default, or a custom defined template.  Template is rendered using Handlebars, and allows you to specify exactly how you want the output to look (html wise, css coming soon).
 
 
 When creating a new post, below the content box you will see something similar to this:
 
 ## Post Metabox
 
-![alt text](https://smyl.es/img/Selection-1180x660-98.png "Post Metabox")
+![alt text](https://smyl.es/img/Selection-1432x558-99.png "Post Metabox")
 
-This first release version is very simple and does allow you to select "Source", "Resource", or "Quote", but right now this is only for future support of these categories.  Currently the plugin only outputs the items as you can see below, but soon will include formatting and more styles to choose from.
+## Template Editor
+![alt text](https://smyl.es/img/Selection-1423x561-99.png "Template Editor")
+
+## Template Help
+![alt text](https://smyl.es/img/Selection-1427x457-99.png "Template Help")
 
 ## Sample of output on a single post page
 
