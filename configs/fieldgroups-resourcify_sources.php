@@ -13,5 +13,8 @@
 
 $configfiles = array(
 	self::get_path( __FILE__ ) . 'resourcify_sources-sources.php', 
+	self::get_path( __FILE__ ) . 'resourcify_sources-template.php', 
+	self::get_path( __FILE__ ) . 'resourcify_sources-template-help.php', 
+	self::get_path( __FILE__ ) . 'resourcify_sources-about.php', 
 );
 

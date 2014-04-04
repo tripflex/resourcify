@@ -19,7 +19,7 @@ class Resourcify {
 	/**
 	 * @var     string
 	 */
-	const VERSION = '1.01';
+	const VERSION = '1.2';
 	/**
 	 * @var      string
 	 */
@@ -295,6 +295,17 @@ class Resourcify {
 
 	
 	/**
+	 * Insert template into footer
+	 *
+	 *
+	 */
+	public function footer_template(){
+		
+		echo $this->render_element(get_option( "_template_footer_options" ), false, 'template_footer');
+
+	}
+	
+	/**
 	 * Register metaboxes.
 	 *
 	 *
@@ -330,9 +341,13 @@ class Resourcify {
 		wp_enqueue_script( $this->plugin_slug . '-panel-script', self::get_url( 'assets/js/panel.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 
 		
+		wp_enqueue_style( $this->plugin_slug . '-resourcify-metaboxstyle', self::get_url( 'assets/css/styles-resourcify_sources.css', __FILE__ ), array(), self::VERSION );
+		wp_enqueue_script( $this->plugin_slug . '-codemirror-resourcify', self::get_url( 'assets/js/codemirror-resourcify.js', __FILE__ ), array( 'jquery' ), self::VERSION );
 		wp_enqueue_style( $this->plugin_slug . '-onoff-styles-toggles-css', self::get_url( 'assets/css/toggles.css', __FILE__ ), array(), self::VERSION );
 		wp_enqueue_script( $this->plugin_slug . '-onoff-script-toggles-min-js', self::get_url( 'assets/js/toggles.min.js', __FILE__ ), array( 'jquery' ), self::VERSION );
-		add_meta_box('resourcify_sources', 'Resourcify', array($this, 'render_metaboxes'), 'post', 'normal', 'high', array( 'slug' => 'resourcify_sources', 'groups' => array('Sources') ) );
+		wp_enqueue_style( $this->plugin_slug . '-codeeditor-styles-editor-css', self::get_url( 'assets/css/editor.css', __FILE__ ), array(), self::VERSION );
+		wp_enqueue_script( $this->plugin_slug . '-codeeditor-script-codemirror-compressed-js', self::get_url( 'assets/js/codemirror-compressed.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+		add_meta_box('resourcify_sources', 'Resourcify', array($this, 'render_metaboxes'), 'post', 'normal', 'high', array( 'slug' => 'resourcify_sources', 'groups' => array('Sources','Template','Template-Help','About') ) );
 		//{{shortcode}}
 		//resourcify
 		//resourcify
@@ -740,14 +755,19 @@ class Resourcify {
 		global $wp_query;
 
 		
+			wp_enqueue_script( 'resourcify_output-handlebars130', self::get_url( '/assets/js/handlebars130.js', __FILE__ ), array( 'jquery' ) , false, true );
 
 		$this->render_element(get_option( "_resourcify_output_options" ), false, 'resourcify_output', true);
+
+		$this->render_element(get_option( "_template_footer_options" ), false, 'template_footer', true);
 
 		foreach($wp_query->posts as &$post){;
 	
 			$post->post_content .= $this->render_element(get_option( "_resourcify_output_options" ), false, 'resourcify_output');
 
 		}
+		add_action('wp_footer', array( $this, 'footer_template' ));
+
 	}
 
 	/**

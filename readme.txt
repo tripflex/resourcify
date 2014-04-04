@@ -1,19 +1,19 @@
 === Resourcify ===
 Contributors: tripflex
 Donate link: https://www.gittip.com/tripflex
-Tags: post quote, post source, post, resource, source, quote source, source link, source link bottom of page
+Tags: post quote, post source, post, resource, handlebars, template, custom, source, quote source, source link, source link bottom of page
 Requires at least: 3.8
 Tested up to: 3.8
-Stable tag: 1.0
+Stable tag: 1.2
 License: GPLv3
 
-Automatically add links to the bottom of a blog post for sources, resources, quotes, and more.  Sources are added from metabox when creating post with repeatable field.
+Add sources to posts via metabox and output below post using template generated with handlebars.  Very clean and completely customizable.
 
 == Description ==
 
 Resourcify allows you to add Sources, Resources, and Quote Sources to a post and display those links at the bottom of each post.
 
-Each source you add will display at the bottom of a post using <ul> and <li> tags.
+Simply put, it gives you an interface on the post admin area to add a Title and URL for each Resource.  The plugin will then output those resources at the bottom of a single blog post page using either the default, or a custom defined template.  Template is rendered using Handlebars, and allows you to specify exactly how you want the output to look (html wise, css coming soon).
 
 = Features =
 
@@ -52,9 +52,23 @@ The manual installation method involves downloading the plugin and uploading it 
 == Screenshots ==
 
 1. Meta box view from new post area
-2. Output preview on frontend below post
+2. Template Editor from new post area
+3. Template Editor Help from new post area
+4. Output preview on frontend below post
 
 == Changelog ==
+
+= 1.2 =
+* First release using templates
+* Multiple bug fixes and patches
+* Use URL for title if title not specified
+* Added template section
+* Added template help section
+* Added about section
+
+= 1.1 =
+* Bug fix fatal error on source count
+
 = 1.0.1 =
 * Fix output to only show on blog posts and not on custom post types.
 
