@@ -1,9 +1,9 @@
 <?php
+	// Only continue if this is a blog post page
 	if(get_post_type() == 'post'){
 		global $post;
 		$sources = get_post_meta($post->ID,'resourcify_sources',TRUE);
-		
-		var_dump($sources);
+
 		// Check if setting was set to use custom template
 		$use_custom_template = intval($sources['use_custom_template']);
 		// Get custom template code
@@ -16,7 +16,7 @@
 		// Start processing only if there are sources for this blog post
 		if($sources){
 			// Count how many sources we have
-			$total_sources = count($sources['source_title']);
+			$total_sources = count($sources['source_url']);
 
 			// Check total sources again just for shits and giggles
 			if($total_sources){
@@ -27,6 +27,10 @@
 				// Check if single source has title or url set, if title is not set, url will be used as title
 				if($is_single_source && $sources['source_url'][0]) $single_source_has_data = true;
 
+				end($sources['source_url']);
+
+				$source_url_key = key($sources['source_url']);
+
 				// Check if single source has data or total sources is greater than 1 before outputting opening UL and heading tags
 				if($single_source_has_data || ($total_sources > 1)){
 					// Set count title to singular or plural based on amount of sources
@@ -36,12 +40,12 @@
 
 					// Create array values to convert to JSON
 					$source_json = array();
-					$source_json['resourcify_count'] = $total_sources;
 					$source_json['resourcify_count_title'] = $count_title;
 					$source_json['resourcify_count'] = $total_sources;
 
 					// Loop through all sources creating array
-					for ($i = 0; $i < $total_sources; $i++){
+					for ($i = 0; $i <= $source_url_key; $i++){
+						if(!$sources['source_url']) continue;
 						$source_type = $sources['source_type'][$i];
 						$source_title = $sources['source_title'][$i];
 						$source_url = $sources['source_url'][$i];
@@ -57,13 +61,11 @@
 						}
 					}
 
-					var_dump($source_json);
+					//sort($source_json['resourcify_sources']);
 
-					echo "fuck";
-
-					var_dump($source_json['resourcify_sources']);
 					// Convert array to JSON to use with Handlebars
 					$encoded_source_json = json_encode($source_json);
+
 					// Output template inside script tags (may be changed later on)
 					?>
 					<script id="resourcify-template" type="text/x-handlebars-template">

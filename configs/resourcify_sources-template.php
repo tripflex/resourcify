@@ -18,25 +18,22 @@ $group = array(
 	'fields' => array(
 		'use_custom_template'	=>	array(
 			'label'		=> 	__('Use Custom Template?','resourcify'),
-          'caption'   =>  '',
+			'caption'	=>	__('Default template will be used if set to No','resourcify'),
 			'type'		=>	'onoff',
 			'default'	=> 	'1||Yes,*0||No',
 			'inline'	=> 	true,
 		),
+		'use_template'	=>	array(
+			'label'		=> 	__('Use Template','resourcify'),
+			'caption'	=>	__('Select a template from the dropdown to fill the code box below','resourcify'),
+			'type'		=>	'dropdown',
+			'default'	=> 	'*0||Select a Pre-Made Template,default||Default',
+		),
 		'template_code'	=>	array(
 			'label'		=> 	__('Template Code','resourcify'),
-			'caption'	=>	__('See the Template Help tab for more details about the template and variables','resourcify'),
+			'caption'	=>	__('Go to the Template Help section for details on template syntax and available variables','resourcify'),
 			'type'		=>	'codeeditor',
-			'default'	=> 	'<h4>
-    {{resourcify_count}} {{resourcify_count_title}}
-</h4>
-<ul>
-    {{#resourcify_sources}}
-    <li>
-        <a target="_blank" href="{{source_url}}">{{source_title}}</a>
-    </li>
-    {{/resourcify_sources}}
-</ul>',
+			'default'	=> 	'',
 		),
 	),
 	'styles'	=> array(

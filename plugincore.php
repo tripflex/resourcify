@@ -10,7 +10,7 @@
  * Plugin Name: Resourcify
  * Plugin URI:  https://github.com/tripflex/resourcify
  * Description: Resourcify is a Wordpress Plugin that will allow you to add Sources, Resources, and Quote Sources to a post.
- * Version:     1.1
+ * Version:     1.2
  * Author:      Myles McNamara
  * Author URI:  http://smyl.es
  * Text Domain: resourcify
